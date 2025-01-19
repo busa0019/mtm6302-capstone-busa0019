@@ -67,7 +67,11 @@ The mockup demonstrates how the application will look and behave on desktop, tab
   - Feedback color: Green (#DFFFD6) for correct/incorrect feedback.
   - Background color: Light gray (#F9F9F9).
 - **Fonts**:
-  - Roboto for headings, Arial for body text.
+  - Headings: Roboto for a modern and professional look.
+  - Body Text: Arial for readability and familiarity.
+- **Logo**:
+  - The application name, Quiz Me!, serves as a text-based logo.
+  - It is styled prominently in the header using a bold font and the primary blue color to enhance brand identity.
 
 ### Mockup Files
 The mockup images for desktop, tablet, and mobile views are embedded below for reference:
