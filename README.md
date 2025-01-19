@@ -85,7 +85,7 @@ A PDF version of all mockups is available for download: [Download Mockup PDF](./
 
 ---
 
-### Changes Based on Feedback
+### Changes Based on Prof's Feedback
 - The "Next" button now includes a dropdown to select the difficulty level before moving to the next question, addressing suggestions from Part 1.
 
 ---
