@@ -41,3 +41,51 @@ The detailed functionality notes are also embedded below:
 
 ![Wireframe Functionality Notes](./wireframe/low-fi-notes.jpg)
 
+
+---
+
+## Part 2: Mockup
+### Purpose
+The mockup demonstrates how the application will look and behave on desktop, tablet, and mobile devices. This includes the layout, user actions, colors, fonts, and branding.
+
+### Mockup Features
+1. **Desktop View**:
+   - Full layout with all sections visible.
+   - Optimized for larger screens with ample spacing.
+
+2. **Tablet View**:
+   - Compact two-column layout for answer buttons.
+   - Touch-friendly interactions and well-aligned components.
+
+3. **Mobile View**:
+   - Fully stacked layout for smaller screens.
+   - Enlarged buttons and dropdowns for easier tapping.
+
+### Colors, Fonts, and Branding
+- **Colors**:
+  - Primary color: Blue (#007BFF) for buttons and headers.
+  - Feedback color: Green (#DFFFD6) for correct/incorrect feedback.
+  - Background color: Light gray (#F9F9F9).
+- **Fonts**:
+  - Roboto for headings, Arial for body text.
+
+### Mockup Files
+The mockup images for desktop, tablet, and mobile views are embedded below for reference:
+
+#### Desktop Mockup
+![Desktop Mockup](./mockups/desktop-mockup.jpg)
+
+#### Tablet Mockup
+![Tablet Mockup](./mockups/tablet-mockup.jpg)
+
+#### Mobile Mockup
+![Mobile Mockup](./mockups/mobile-mockup.jpg)
+
+A PDF version of all mockups is available for download: [Download Mockup PDF](./mockups/mockup.pdf)
+
+---
+
+### Changes Based on Feedback
+- The "Next" button now includes a dropdown to select the difficulty level before moving to the next question, addressing suggestions from Part 1.
+
+---
