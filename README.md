@@ -93,3 +93,34 @@ A PDF version of all mockups is available for download: [Download Mockup PDF](./
 - The "Next" button now includes a dropdown to select the difficulty level before moving to the next question, addressing suggestions from Part 1.
 
 ---
+
+## Part 3: Prototype
+
+### Purpose
+The prototype builds on the mockup and brings it to life using **only HTML and CSS** (no JavaScript). This version ensures:
+- A structured and interactive quiz experience.
+- Users can select difficulty and answer questions with checkboxes.
+- The quiz is fully responsive on **mobile, tablet, and desktop**.
+- A "Finish Quiz" button displays the **scoreboard**.
+
+### Features Implemented
+✅ **Multiple-choice questions** (Easy, Medium, Hard).  
+✅ **Checkboxes for multiple correct answers**.  
+✅ **Fully responsive design using CSS Grid & Flexbox**.  
+✅ **Users can finish the quiz and see their scores**.  
+✅ **Uses `:target` in CSS to navigate sections without JavaScript**.  
+
+### Technologies Used
+- **HTML5** for structure.
+- **CSS3** with Grid & Flexbox for layout.
+- **CSS `:target` pseudo-class** for navigation.
+
+### Challenges & Solutions
+| **Challenge** | **Solution** |
+|--------------|-------------|
+| Making the quiz interactive without JavaScript | Used CSS `:target` for navigation |
+| Ensuring multiple correct answers are supported | Used checkboxes for each answer |
+| Creating a smooth, responsive experience | Used CSS Grid & Flexbox |
+
+
+

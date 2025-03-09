@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Me!</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Me!</h1>
+        <p>Test your knowledge with random questions.</p>
+    </header>
+
+    <main>
+        <!-- Difficulty Selection -->
+        <section class="difficulty-section">
+            <h2>Select Difficulty</h2>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <!-- <button class="btn">Get Question</button> -->
+            <a href="#question-section"><button class="btn">Get Question</button></a>
+        </section>
+
+        <!-- Question Section -->
+         
+        <!-- <section class="question-section"> -->
+            <section id="question-section" class="question-section">
+            <h2>Question Section</h2>
+            <p><strong>Question:</strong> What are the colors in the French flag?</p>
+            <div class="answer-buttons">
+                <button class="btn"><input type="checkbox">A. Red</button>
+                <button class="btn"><input type="checkbox">B. Blue</button>
+                <button class="btn"><input type="checkbox">C. Green</button>
+                <button class="btn"><input type="checkbox">D. White</button>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="feedback">
+                <p>✅ <strong>Correct!</strong> The correct answers are Red, Blue, and White.</p>
+                <label for="new-difficulty">Select a new difficulty for the next question:</label>
+                <select id="new-difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <button class="btn next">Next</button>
+        </section>
+
+ <!-- Finish Quiz Button (Navigates to Scoreboard) -->
+ <section class="finish-section">
+    <a href="#scoreboard"><button class="btn finish">Finish Quiz</button></a>
+</section>
+
+        <!-- Scoreboard Section -->
+        <section id="scoreboard" class="scoreboard">
+            <h2>Scoreboard</h2>
+            <p>Correct: <span id="correct-score">1</span></p>
+            <p>Incorrect: <span id="incorrect-score">0</span></p>
+            <button class="btn reset">Reset Stats</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Powered by QuizAPI</p>
+    </footer>
+</body>
+</html>

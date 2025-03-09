@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F9F9F9;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.question-section {
+    display: none; /* Hide by default */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+:target {
+    display: block; /* Show when targeted */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.next {
+    width: 100%;
+}
+
+.reset {
+    background-color: #FF3B3B;
+}
+
+.reset:hover {
+    background-color: #c9302c;
+}
+
+/* Answer Buttons */
+.answer-buttons {
+    display: grid;
+    gap: 10px;
+}
+
+.answer-buttons button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Feedback Section */
+.feedback {
+    background-color: #DFFFD6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Scoreboard */
+.scoreboard {
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    background: #343a40;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/* --- RESPONSIVENESS --- */
+
+/* Tablet */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+    .answer-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .answer-buttons {
+        grid-template-columns: 1fr;
+    }
+    .btn {
+        width: 100%;
+    }
+}
