@@ -107,20 +107,36 @@ The prototype builds on the mockup and brings it to life using **only HTML and C
 ✅ **Multiple-choice questions** (Easy, Medium, Hard).  
 ✅ **Checkboxes for multiple correct answers**.  
 ✅ **Fully responsive design using CSS Grid & Flexbox**.  
-✅ **Users can finish the quiz and see their scores**.  
-✅ **Uses `:target` in CSS to navigate sections without JavaScript**.  
+✅ **Users can finish  quiz at anytime and see their scores**.  
+✅ **Navigation between sections using anchor links (`<a href="#section-id">`).**
+✅ **Correct & Incorrect answers are tracked in the scoreboard.**
+✅**No JavaScript used – CSS-only interactions.** 
 
 ### Technologies Used
 - **HTML5** for structure.
 - **CSS3** with Grid & Flexbox for layout.
-- **CSS `:target` pseudo-class** for navigation.
+- **Media queries** to ensure responsiveness across devices.
+
+### Responsive Adjustments
+
+| **Device**   | **Changes Applied** |
+|-------------|--------------------|
+| **Desktop**  | Default layout. |
+| **Tablet (1024px)**  | Two-column button layout, scoreboard scores aligned in one row. |
+| **Mobile (600px)**  | Hamburger menu, single-column buttons, scoreboard stacked. |
+
+
 
 ### Challenges & Solutions
 | **Challenge** | **Solution** |
 |--------------|-------------|
-| Making the quiz interactive without JavaScript | Used CSS `:target` for navigation |
+| Making the quiz interactive without JavaScript | Used anchor links (<a href="#section-id">) for smooth navigation |
 | Ensuring multiple correct answers are supported | Used checkboxes for each answer |
-| Creating a smooth, responsive experience | Used CSS Grid & Flexbox |
+| Aligning UI elements properly on different screen sizes| Used CSS Grid & Flexbox with media queries |
 
+### Changes Based on Prof's Feedback
 
+- **Added checkboxes** to allow multiple correct answers for certain questions.
+- **Implemented a "Finish Quiz" button**, enabling users to end the quiz at any time and immediately display the scoreboard.
+---
 
