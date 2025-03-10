@@ -130,7 +130,7 @@ The prototype builds on the mockup and brings it to life using **only HTML and C
 ### Challenges & Solutions
 | **Challenge** | **Solution** |
 |--------------|-------------|
-| Making the quiz interactive without JavaScript | Used anchor links (<a href="#section-id">) for smooth navigation |
+| Making the quiz interactive without JavaScript | Used anchor links (`<a href="#section-id">`)for smooth navigation |
 | Ensuring multiple correct answers are supported | Used checkboxes for each answer |
 | Aligning UI elements properly on different screen sizes| Used CSS Grid & Flexbox with media queries |
 
