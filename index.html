@@ -7,36 +7,61 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <nav class="container-fluid">
+        <ul class="logo">
+            <li><strong>Quiz Me!</strong></li>
+        </ul>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Scoreboard</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Header Section -->
     <header>
         <h1>Quiz Me!</h1>
         <p>Test your knowledge with random questions.</p>
     </header>
 
     <main>
-        <!-- Difficulty Selection -->
+
+        <!-- Difficulty Selection Section -->
         <section class="difficulty-section">
             <h2>Select Difficulty</h2>
-            <label for="difficulty">Difficulty:</label>
-            <select id="difficulty">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <!-- <button class="btn">Get Question</button> -->
-            <a href="#question-section"><button class="btn">Get Question</button></a>
+            <div class="difficulty-container">
+                <div class="difficulty-group">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="location.href='#question-section'">Get Question</button>
+            </div>
         </section>
 
         <!-- Question Section -->
-         
-        <!-- <section class="question-section"> -->
-            <section id="question-section" class="question-section">
+        <section id="question-section" class="question-section">
             <h2>Question Section</h2>
-            <p><strong>Question:</strong> What are the colors in the French flag?</p>
-            <div class="answer-buttons">
-                <button class="btn"><input type="checkbox">A. Red</button>
-                <button class="btn"><input type="checkbox">B. Blue</button>
-                <button class="btn"><input type="checkbox">C. Green</button>
-                <button class="btn"><input type="checkbox">D. White</button>
+            <div class="question-container">
+                <div class="question-group">
+                    <label for="difficulty">Question:</label>
+                    <p  id="question"> What are the colors in the French flag?</p>
+
+                </div>
+                <div class="answer-buttons">
+                    <label class="btn"><input type="checkbox" name="answer"> A. White</label>
+                    <label class="btn"><input type="checkbox" name="answer"> B. Green</label>
+                    <label class="btn"><input type="checkbox" name="answer"> C. Red</label>
+                    <label class="btn"><input type="checkbox" name="answer"> D. Blue</label>
+                </div>
             </div>
 
             <!-- Feedback Section -->
@@ -53,22 +78,31 @@
             <button class="btn next">Next</button>
         </section>
 
- <!-- Finish Quiz Button (Navigates to Scoreboard) -->
- <section class="finish-section">
-    <a href="#scoreboard"><button class="btn finish">Finish Quiz</button></a>
-</section>
-
-        <!-- Scoreboard Section -->
-        <section id="scoreboard" class="scoreboard">
-            <h2>Scoreboard</h2>
-            <p>Correct: <span id="correct-score">1</span></p>
-            <p>Incorrect: <span id="incorrect-score">0</span></p>
-            <button class="btn reset">Reset Stats</button>
+        <!-- Finish Quiz Button (Navigates to Scoreboard) -->
+        <section class="finish-section">
+            <h2>Finish Quiz</h2>
+            <p>Click the button below to finish the quiz and view your results.</p>
+            <a href="#scoreboard" class="btn finish">Finish Quiz</a>
+            
         </section>
+
+      <!-- Scoreboard Section -->
+      <section id="scoreboard" class="scoreboard">
+             <h2>Scoreboard</h2>
+             <div class="score-container">
+             <p>Correct: <span id="correct-score">5</span></p>
+             <p>Incorrect: <span id="incorrect-score">0</span></p>
+        </div>
+       <button class="btn reset">Reset Stats</button> 
+    </section>
+
+
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <p>Powered by QuizAPI</p>
     </footer>
+
 </body>
 </html>
