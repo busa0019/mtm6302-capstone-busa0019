@@ -140,3 +140,7 @@ The prototype builds on the mockup and brings it to life using **only HTML and C
 - **Implemented a "Finish Quiz" button**, enabling users to end the quiz at any time and immediately display the scoreboard.
 ---
 
+### Resources Used
+- [W3C HTML & CSS Validator](https://validator.w3.org/) - To ensure clean and valid code.
+- [W3Schools](https://www.w3schools.com/) - For reference on CSS techniques and best practices.
+- [IMDAC](https://imdac.github.io/) - For additional learning resources and coding support.
