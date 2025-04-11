@@ -16,9 +16,9 @@
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">☰</label>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Scoreboard</a></li>
+            <li><a href="#scoreboard">Scoreboard</a></li>
         </ul>
     </nav>
     
@@ -43,9 +43,7 @@
                         <option value="hard">Hard</option>
                     </select>
                 </div>
-                <a href="#question-section" class="btn">Get Question</a>
-
-                <!-- <button class="btn" onclick="location.href='#question-section'">Get Question</button> -->
+                <button class="btn get-question-btn">Get Question</button>
             </div>
         </section>
 
@@ -54,22 +52,29 @@
             <h2>Question Section</h2>
             <div class="question-container">
                 <div class="question-group">
-                    <label for="difficulty">Question:</label>
-                    <p  id="question"> What are the colors in the French flag?</p>
+                   
+            <label for="question">Question:</label>
+            
+            <p id="question">Loading question...</p>
 
                 </div>
-                <div class="answer-buttons">
-                    <label class="btn"><input type="checkbox" name="answer"> A. White</label>
-                    <label class="btn"><input type="checkbox" name="answer"> B. Green</label>
-                    <label class="btn"><input type="checkbox" name="answer"> C. Red</label>
-                    <label class="btn"><input type="checkbox" name="answer"> D. Blue</label>
+                
+        <div class="answer-buttons" id="answer-buttons">
+                     <!-- Answer buttons will be populated by JavaScript -->
+
+                    <!-- <label class="btn"><input type="checkbox" name="answer">A. </label>
+                    <label class="btn"><input type="checkbox" name="answer"> B. </label>
+                    <label class="btn"><input type="checkbox" name="answer"> C. </label>
+                    <label class="btn"><input type="checkbox" name="answer"> D. </label>  -->
                 </div>
             </div>
 
             <!-- Feedback Section -->
-            <div class="feedback">
-                <p>✅ <strong>Correct!</strong> The correct answers are Red, Blue, and White.</p>
-                <label for="new-difficulty">Select a new difficulty for the next question:</label>
+            <div class="feedback"  id="feedback">
+                
+            <p id="feedback-message">✅ <strong>Correct!</strong>The correct answer(s): ....</p>
+
+                <label for="new-difficulty"><strong>Select a new difficulty for the next question:</strong></label>
                 <select id="new-difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -77,7 +82,7 @@
                 </select>
             </div>
 
-            <button class="btn next">Next</button>
+            <button class="btn next" id="next-btn">Next</button>
         </section>
 
         <!-- Finish Quiz Button (Navigates to Scoreboard) -->
@@ -92,10 +97,10 @@
       <section id="scoreboard" class="scoreboard">
              <h2>Scoreboard</h2>
              <div class="score-container">
-             <p>Correct: <span id="correct-score">5</span></p>
+             <p>Correct: <span id="correct-score">0</span></p>
              <p>Incorrect: <span id="incorrect-score">0</span></p>
         </div>
-       <button class="btn reset">Reset Stats</button> 
+       <button class="btn reset"  id="reset-btn">Reset Stats</button> 
     </section>
 
 
@@ -105,6 +110,8 @@
     <footer>
         <p>Powered by QuizAPI</p>
     </footer>
+    
+    <script src="script.js" defer></script>
 
 </body>
 </html>

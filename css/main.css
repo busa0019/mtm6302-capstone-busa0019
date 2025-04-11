@@ -1,14 +1,23 @@
-* {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
+
+ /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}  */
 
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #F8F9F9;
     text-align: center;
 }
+
 
 /* Navigation */
 .container-fluid {
@@ -98,6 +107,8 @@ nav a:hover {
     border-radius: 5px;
 }
 
+
+
 /* Header */
 header {
     background-color: #007BFF;
@@ -123,16 +134,20 @@ p {
 /* Main Layout */
 main {
     display: grid;
-    gap: 20px;
+    gap: 30px;
     max-width: 800px;
     margin: 20px auto;
 }
+
+
+
 
 /* Question Section */
 .question-section {
     display: block;
     opacity: 1;
     transform: translateY(20px);
+    margin-bottom: 20px;
     /* transition: opacity 0.5s ease-out, transform 0.5s ease-out; */
 }
 
@@ -149,7 +164,7 @@ main {
     padding: 8px;
     font-size: 1rem;
     border-radius: 5px;
-    width: 60%;
+    width: 100%;
     border: 1px solid #ccc;
     text-align: left;
 }
@@ -339,8 +354,31 @@ footer {
     background: #343a40;
     color: white;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: auto;
 }
+
+/* Center the submit button */
+.answer-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+}
+
+/* Style for answer options */
+.answer-buttons label {
+    width: 100%;
+    text-align: left; 
+    padding: 8px;
+}
+
+/* Center only the submit button */
+.answer-buttons .submit-btn {
+    margin: 10px auto; 
+    display: block;
+    text-align: center;
+}
+
 
 @media (max-width: 1024px){
     /* Tablet Screens */
@@ -364,8 +402,28 @@ footer {
         margin: auto; /* Center alignment */
         font-size: 1.2rem; /* Adjust size */
     }
+
+    /* Make submit button full width */
+    .answer-buttons .submit-btn {
+        width: 100%;
+        max-width: 500px; 
+        margin: 20px auto; 
+    }
     
+    /* Keep answer options in 2 columns but make submit button full width below */
+    .answer-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    /* Make sure submit button spans both columns */
+    .submit-btn {
+        grid-column: 1 / -1;
+    }
 }
+    
+
 
  /* Mobile view  */
  @media (max-width: 600px){ 
@@ -431,5 +489,4 @@ footer {
         align-items: center;
         width: 100%;
     }
-
  }
