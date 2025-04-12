@@ -144,3 +144,118 @@ The prototype builds on the mockup and brings it to life using **only HTML and C
 - [W3C HTML & CSS Validator](https://validator.w3.org/) - To ensure clean and valid code.
 - [W3Schools](https://www.w3schools.com/) - For reference on CSS techniques and best practices.
 - [IMDAC](https://imdac.github.io/) - For additional learning resources and coding support.
+
+
+---
+
+## Part 4: Final Functional Application
+
+### ✅ Purpose
+This stage transforms the static prototype into a **fully functional web application** using HTML, CSS, and JavaScript. It connects to the **QuizAPI** to dynamically fetch questions, allows users to answer them, and tracks scores with persistent local storage.
+
+---
+
+### ✅ Features Implemented
+- **Dynamic Question Loading**: Fetches random questions based on selected difficulty
+- **Answer Validation**:
+  - Radio buttons for single-answer questions
+  - Checkboxes for multiple-answer questions
+- **Interactive Feedback**:
+  - Instant correct/incorrect indicators
+  - Displays correct answers after submission
+- **Score Management**:
+  - Live score updates (Correct/Incorrect)
+  - Persistent storage using localStorage
+  - Reset stats functionality
+- **Fallback System**: Local questions when API fails
+- **Responsive Design**: Optimized for all devices
+- **Seamless Navigation**: No page refreshes required
+
+---
+
+### ✅ Technologies Used
+- **HTML5** Semantic markup
+- **CSS3** with Flexbox/Grid layouts
+- **JavaScript**:
+  - `fetch()` API for async operations
+  - DOM manipulation
+  - localStorage with JSON serialization
+  - Event listeners only (no inline JS)
+- **Media Queries**: 600px (mobile) and 1024px (tablet) breakpoints
+
+---
+
+### ✅ Responsive Design Implementation
+
+| Device       | Layout Features                                                                 |
+|--------------|---------------------------------------------------------------------------------|
+| **Desktop**  | Full-width layout, visible navigation, grid-based answer buttons               |
+| **Tablet**   | Two-column answer layout, optimized touch targets                              |
+| **Mobile**   | Hamburger menu, stacked layout, larger tap areas                               |
+
+---
+
+### ✅ Implementation Details
+
+| Feature              | Technical Approach                                                                 |
+|----------------------|-----------------------------------------------------------------------------------|
+| Dynamic Content      | API calls with `fetch()` + DOM manipulation                                       |
+| Answer Validation    | Checks `correct_answers` property from API response                               |
+| Score Persistence    | `localStorage` with `JSON.parse()`/`JSON.stringify()`                             |
+| Error Handling       | Try/catch blocks with fallback questions                                          |
+| Responsive UI        | CSS Grid + media queries                                                          |
+|  Input Switching         | Dynamic radio/checkbox based on multiple_correct_answers flag                                                     |
+---
+
+### ✅ Challenges & Solutions
+
+| Challenge                                | Solution                                                                          |
+|------------------------------------------|-----------------------------------------------------------------------------------|
+| API rate limits (429 errors)             | Fallback question object arrays by difficulty                   |
+| Score synchronization                    | localStorage integration with JSON serialization                                  |
+| Multiple answer handling                 | Dynamic switch between radio/checkbox inputs                                      |
+| Feedback and state transitions               | Used conditional DOM rendering and event handlers                |                                |
+
+---
+
+### ✅ Changes from Prototype (Part 3)
+- Replaced static content with API-driven questions
+- Added dynamic answer validation logic
+- Implemented score persistence across sessions
+- Introduced loading states during API calls
+- Added proper error handling and fallbacks
+
+---
+
+### ✅ Resources Used
+- [QuizAPI Documentation](https://quizapi.io/docs)
+-  [IMDAC](https://imdac.github.io/)
+- Stack Overflow (troubleshooting fetch/localStorage issues)
+- [W3C Validator](https://validator.w3.org/) - Code validation
+- [W3Schools](https://w3schools.com/)
+---
+
+### ✅ Instructor Feedback Addressed
+- **Next Button Improvement**: Added difficulty dropdown for next question
+- **Multiple Answers**: Implemented checkbox support for multi-answer questions
+
+---
+
+### 🚀 How to Use
+1. Select difficulty from dropdown
+2. Click "Get Question"
+3. Choose answer(s) using radio/checkboxes
+4. Click "Submit Answers" for instant feedback
+5. Use "Next" for new question or "Finish Quiz" to view scores
+6. Reset stats anytime with "Reset Stats" button
+
+---
+
+### Final Features
+- 📱 Full mobile responsiveness
+- 🔄 API/local question fallback
+- 📊 Persistent score tracking
+- 🛠️ Configurable difficulty levels
+- ✅ Immediate answer feedback
+
+---
