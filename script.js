@@ -188,7 +188,7 @@ function displayQuestion(question) {
     
     // Add submit button
     const submitBtn = document.createElement('button');
-    submitBtn.className = 'btn submit-btn'
+    submitBtn.className = 'btn submit-btn';
     submitBtn.textContent = 'Submit Answers';
     submitBtn.addEventListener('click', checkAnswers);
     answerButtons.appendChild(submitBtn);
