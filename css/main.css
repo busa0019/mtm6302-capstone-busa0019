@@ -385,23 +385,17 @@ footer {
     .answer-buttons {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; 
+        gap: 25px; 
         justify-content: center;
         align-items: center;
+       
     }
 
     .answer-buttons button {
         width: 100%;
         text-align: left; 
     }
-    .score-container {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 300px; /* Adjust width if needed */
-        margin: auto; /* Center alignment */
-        font-size: 1.2rem; /* Adjust size */
-    }
+    
 
     /* Make submit button full width */
     .answer-buttons .submit-btn {
@@ -410,16 +404,19 @@ footer {
         margin: 20px auto; 
     }
     
-    /* Keep answer options in 2 columns but make submit button full width below */
-    .answer-buttons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
     
     /* Make sure submit button spans both columns */
     .submit-btn {
         grid-column: 1 / -1;
+    }
+
+    .score-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px; /* Adjust width if needed */
+        margin: auto; /* Center alignment */
+        font-size: 1.2rem; /* Adjust size */
     }
 }
     

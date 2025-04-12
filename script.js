@@ -1,9 +1,45 @@
 // Quiz configuration
 const API_KEY = "FJr5q7z5RxceCVLVHTGBdnk89dqrdaaixAU0tDba";
+
+// Fallback Questions (in case API fails or rate-limits)
+const customQuestions = {
+    easy: [
+        {
+            question: "What is 2+2?",
+            answers: { answer_a: "3", answer_b: "4", answer_c: "5" },
+            correct_answers: { answer_b_correct: "true" }
+        },
+        {
+            question: "What is the capital of France?",
+            answers: { answer_a: "London", answer_b: "Paris", answer_c: "Berlin" },
+            correct_answers: { answer_b_correct: "true" }
+        }
+    ],
+    medium: [
+        {
+            question: "What does HTML stand for?",
+            answers: {
+                answer_a: "Hyper Text Markup Language",
+                answer_b: "Home Tool Markup Language",
+                answer_c: "Hyperlinks and Text Markup Language"
+            },
+            correct_answers: { answer_a_correct: "true" }
+        }
+    ],
+    hard: [
+        {
+            question: "What is the chemical symbol for gold?",
+            answers: { answer_a: "Ag", answer_b: "Au", answer_c: "Fe" },
+            correct_answers: { answer_b_correct: "true" }
+        }
+    ]
+};
+
 let currentDifficulty = 'easy';
 let currentQuestion = null;
 let score = { correct: 0, incorrect: 0 };
 let selectedAnswers = [];
+
 
 // DOM Elements
 const difficultySelect = document.getElementById('difficulty');
@@ -21,8 +57,17 @@ const correctScoreElement = document.getElementById('correct-score');
 const incorrectScoreElement = document.getElementById('incorrect-score');
 const resetBtn = document.querySelector('.reset');
 
+
 // Initialize the app
 function init() {
+     // Load scores from localStorage
+     const savedScore = localStorage.getItem('quizScore');
+     if (savedScore) {
+         score = JSON.parse(savedScore);
+         updateScoreboard();
+     }
+
+
     // Set up event listeners
     difficultySelect.addEventListener('change', (e) => {
         currentDifficulty = e.target.value;
@@ -46,7 +91,7 @@ function init() {
     scoreboardSection.style.display = 'none';
 }
 
-// Fetch question from QuizAPI
+// Fetch question from QuizAPI with fallback
 async function fetchQuestion() {
     try {
         // Show loading state
@@ -62,15 +107,20 @@ async function fetchQuestion() {
         );
         
         if (!response.ok) {
-            throw new Error('Failed to fetch question');
+            throw new Error(' API Failed');
         }
         
         const data = await response.json();
-        currentQuestion = data[0];
+        currentQuestion = data[0] 
+
+         // If API returns empty, use fallback questions
+        if (!currentQuestion) throw new Error('No  API questions');
         displayQuestion(currentQuestion);
     } catch (error) {
-        console.error('Error fetching question:', error);
-        questionText.textContent = 'Failed to load question. Please try again.';
+        console.log('Using fallback questions');
+        const localQuestions = customQuestions[currentDifficulty];
+        currentQuestion = localQuestions[Math.floor(Math.random() * localQuestions.length)];
+        displayQuestion(currentQuestion);
     }
 }
 
@@ -189,10 +239,12 @@ function countCorrectAnswers(question) {
 
 // Update scoreboard display
 function updateScoreboard() {
-    correctScoreElement.textContent = score.correct;
-    incorrectScoreElement.textContent = score.incorrect;
-}
-
+       // Save to localStorage
+       localStorage.setItem('quizScore', JSON.stringify(score));
+       correctScoreElement.textContent = score.correct;
+       incorrectScoreElement.textContent = score.incorrect;
+   }
+   
 // Show scoreboard section
 function showScoreboard() {
     questionSection.style.display = 'none';
@@ -204,6 +256,7 @@ function showScoreboard() {
 // Reset scores
 function resetScores() {
     score = { correct: 0, incorrect: 0 };
+    localStorage.removeItem('quizScore');
     updateScoreboard();
 }
 
